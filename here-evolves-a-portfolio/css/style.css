@@ -1,0 +1,11 @@
+#canvas{background:#000;}
+html{margin:0;padding:0;background:#000;}
+body {
+    font-size: 10px;
+}
+h1 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    color: #00a6d6;
+    text-transform: uppercase;
+}
