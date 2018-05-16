@@ -535,6 +535,18 @@ p{
 	}
 }
 
+.privacy_policy {
+	position: fixed;
+	bottom: 0;
+   a {
+	  font-size: 11px; 
+	  color: #303133;
+	  z-index: 100;
+	  text-decoration: none;
+	  padding: 0.5rem;
+  }
+}
+
 header {
 	position:absolute;
 	right: 0;
