@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+body {
+    background: #000;
+}
+
+#burger {
+    margin: 10% 50%;
+    transition: all 500ms ease-in-out;
+}
+
+#stroke1, #stroke2, #stroke3 {
+    cursor: pointer;
+    border-top: 3px solid #fff;
+    width: 35px;
+    height: 5px;
+    transition: all 500ms ease-in-out;
+}
+
+#tap-circle {
+    border: 1px solid #fff;
+    border-radius: 1000px;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+    margin: -42px -10px;
+    transition: all 500ms ease-in-out;
+}
+
+.rotate1 {
+    transform: rotate(45deg) translateY(5px) translateX(2px);
+}
+
+.opacity {
+    opacity: 0;
+}
+
+.rotate2 {
+    transform: rotate(-45deg) translateY(-7px) translateX(8px);
+}
+
+.click-animation {
+    animation: animation 0.3s forwards ease-in-out;
+}
+
+@keyframes animation {
+    0% {opacity: 0; transform: scale(1);}
+    80% {opacity: 1;}
+    100% {opacity: 0; transform: scale(1.8);}
+}
+
+</style>
+</head>
+<body>
+
+<div id="burger" onclick="animation()">
+    <div id="stroke1"></div>
+    <div id="stroke2"></div>
+    <div id="stroke3"></div>
+    <div id="tap-circle"></div>
+</div>   
+
+</body>
+
+<script>
+    function animation() {
+        document.getElementById("stroke1").classList.toggle("rotate1");
+        document.getElementById("stroke2").classList.toggle("opacity");
+        document.getElementById("stroke3").classList.toggle("rotate2");
+    }
+
+    //with help from https://codepen.io/chriscoyier/pen/EyRroJ
+
+    var element = document.getElementById("burger");
+    element.addEventListener("click", function(event) {
+      event.preventDefault();
+      document.getElementById("tap-circle").classList.remove("click-animation");
+      void element.offsetWidth;
+      document.getElementById("tap-circle").classList.add("click-animation");
+    }, false);
+</script>
+</html>
+
